@@ -1,0 +1,12 @@
+
+.PageName {
+  margin-top: 25px;
+  text-decoration-line: underline;
+}
+
+.BtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 25px;
+}
+
