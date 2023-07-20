@@ -1,0 +1,87 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Mike Potts",
+      "jobTitle": "CEO",
+      "tenure": "5",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "name": "Tom Connor",
+      "jobTitle": "Developer",
+      "tenure": "2",
+      "gender": "Male"
+    },
+    {
+      "id": "3",
+      "name": "Jesse Karl",
+      "jobTitle": "Developer",
+      "tenure": "3",
+      "gender": "Male"
+    },
+    {
+      "id": "4",
+      "name": "Kelly Turner",
+      "jobTitle": "QA",
+      "tenure": "8",
+      "gender": "Female"
+    },
+    {
+      "id": "5",
+      "name": "Allison Rogers",
+      "jobTitle": "Marketing Specialist",
+      "tenure": "1",
+      "gender": "Female"
+    },
+    {
+      "id": "6",
+      "name": "Brian Phillips",
+      "jobTitle": "QA",
+      "tenure": "12",
+      "gender": "Male"
+    },
+    {
+      "id": "7",
+      "name": "Matthew Moody",
+      "jobTitle": "Developer",
+      "tenure": "7",
+      "gender": "Male"
+    },
+    {
+      "id": "8",
+      "name": "Alex Boone",
+      "jobTitle": "Marketing Specialist",
+      "tenure": "5",
+      "gender": "Female"
+    },
+    {
+      "id": "9",
+      "name": "Zachary Zane",
+      "jobTitle": "CFO",
+      "tenure": "4",
+      "gender": "Male"
+    },
+    {
+      "id": "10",
+      "name": "Scott Holder",
+      "jobTitle": "Developer",
+      "tenure": "4",
+      "gender": "Male"
+    },
+    {
+      "name": "Joseph Bale",
+      "jobTitle": "QA",
+      "tenure": "15",
+      "gender": "Male"
+    },
+    {
+      "id": "11",
+      "name": "Rebecca Reuben",
+      "jobTitle": "Developer",
+      "tenure": "6",
+      "gender": "Female"
+    }
+  ]
+}

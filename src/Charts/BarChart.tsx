@@ -5,27 +5,15 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
 } from "recharts";
 
-const data = [
-  {
-    name: "Male",
-    male: 300,
-  },
-  {
-    name: "Female",
-    female: 700,
-  },
-];
+const BarChart = ({mappedData}: any) => {
 
-const BarChart = () => {
   return (
     <BChart
       width={510}
       height={510}
-      data={data}
+      data={mappedData}
       barGap={-200}
       barCategoryGap={50}
       margin={{
