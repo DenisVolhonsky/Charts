@@ -1,7 +1,7 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { Container } from '@mui/material';
 
-const ChartsWrapper = ({ children }: any) => (
+const ChartsWrapper: React.FC<PropsWithChildren> = ({ children }) => (
     <Container className="ChartsWrapper">
         {children}
     </Container>

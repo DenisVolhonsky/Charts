@@ -7,13 +7,20 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const BarChart = ({mappedData}: any) => {
+interface MappedData {
+  name: string;
+  [key: string]: string
+}
+interface Prop  {
+  mappedData: MappedData[]
+}
 
+const BarChart: React.FC<Prop> = ({ mappedData }) => {
   return (
     <BChart
       width={510}
       height={510}
-      data={mappedData}
+      data={mappedData as any}
       barGap={-200}
       barCategoryGap={50}
       margin={{

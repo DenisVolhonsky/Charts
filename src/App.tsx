@@ -6,7 +6,6 @@ import "./App.css";
 import { Box, Container, Typography } from "@mui/material";
 import { getData, postData } from "./api.js";
 import { mappedChartData } from "./helpers";
-import { nanoid } from "nanoid";
 import AddEmployeeModal from "./Modal";
 
 export interface Data {
@@ -18,8 +17,8 @@ export interface Data {
 }
 
 function App() {
-  const [data, setData] = useState<any>([]);
-  const [open, setOpen] = useState<Boolean>(false);
+  const [data, setData] = useState([]);
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -33,9 +32,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(mappedChartData(data, "gender"));
-  console.log(mappedChartData(data, "jobTitle"));
-
   return (
     <Container>
       <Typography variant="h5" className="PageName">
@@ -47,16 +43,6 @@ function App() {
           sx={{ boxShadow: 6 }}
           style={{ textTransform: "none" }}
           onClick={handleOpen}
-          // onClick={async () => {
-          //   const result = await postData({
-          //     id: nanoid(),
-          //     name: "Denys Volkhonsky",
-          //     jobTitle: "developer",
-          //     tenure: "5",
-          //     gender: "Male"
-          //   });
-          //   result && fetchData();
-          // }}
         >
           Add Employee
         </Button>

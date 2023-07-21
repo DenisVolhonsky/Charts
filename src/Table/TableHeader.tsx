@@ -31,8 +31,8 @@ const TableHeader = ({
           >
             <TableSortLabel
               active={valueToOrderBy === column.id}
-              direction={valueToOrderBy === column.id ? orderDirection : "asc"} // or desc
-              onClick={createSortHandler(column.id)} //createSortHandler('name') column.id
+              direction={valueToOrderBy === column.id ? orderDirection : "asc"}
+              onClick={createSortHandler(column.id)}
             >
               {column.label}
             </TableSortLabel>

@@ -1,30 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Button,
-  FormControl,
   Input,
   InputLabel,
   Modal,
-  TextField,
   Typography,
 } from "@mui/material";
-import { nanoid } from "nanoid";
 import { Data } from "../App";
 import { Formik, Form } from "formik";
 
-interface Values {
-  name: string;
-  jobTitle: string;
-  tenure: string;
-  gender: string;
-}
-
 interface Props {
-  open: Boolean;
+  open: boolean;
   handleClose: () => void;
   fetchData: () => void;
-  postData: () => void;
+  postData: (value: Data) => void;
 }
 
 const style = {
@@ -44,10 +34,10 @@ const AddEmployeeModal: React.FC<Props> = ({
   handleClose,
   fetchData,
   postData,
-}: any) => {
+}: Props) => {
 
   const onSubmit = async (values: Data) => {
-    const result = await postData(values);
+    const result: any = await postData(values);
     result && fetchData();
     handleClose();
   };
