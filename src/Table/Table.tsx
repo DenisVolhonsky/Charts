@@ -7,7 +7,8 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import { styled } from '@mui/material/styles';
 import TableRow from '@mui/material/TableRow';
-import uuid from 'react-uuid';
+import { nanoid } from 'nanoid';
+
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
     '&:nth-of-type(odd)': {
@@ -91,11 +92,11 @@ const EmployeesTable = ({data}: any) => {
                     <TableBody>
                         {sortedRowInformation(data, getComparator(orderDirection, valueToOrderBy))
                             .map((row: any) => (
-                                <StyledTableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
+                                <StyledTableRow hover role="checkbox" tabIndex={-1} key={nanoid()}>
                                     {columns.map((column) => {
                                         const value = row[column.id];
                                         return (
-                                            <TableCell key={uuid()} align={column.align} style={{ borderLeft: '1px solid black' }}>
+                                            <TableCell key={nanoid()} align={column.align} style={{ borderLeft: '1px solid black' }}>
                                                 {column.format && typeof value === 'number'
                                                     ? column.format(value)
                                                     : value}
