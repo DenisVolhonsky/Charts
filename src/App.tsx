@@ -3,7 +3,7 @@ import { PieChart, BarChart, FieldSet } from "./Charts";
 import { EmployeesTable } from "./Table";
 import Button from "@mui/material/Button";
 import "./App.css";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, LinearProgress, Typography } from "@mui/material";
 import { getData, postData } from "./api.js";
 import { mappedChartData } from "./helpers";
 import AddEmployeeModal from "./Modal";
@@ -34,11 +34,12 @@ function App() {
 
   return (
     <Container>
-      <Typography variant="h5" className="PageName">
+      <Typography data-testid="company-name" variant="h5" className="PageName">
         Corporate Employees
       </Typography>
       <Box className="BtnWrapper">
         <Button
+          data-testid="button"
           variant="outlined"
           sx={{ boxShadow: 6 }}
           style={{ textTransform: "none" }}
@@ -53,21 +54,33 @@ function App() {
           postData={postData}
         />
       </Box>
-      <EmployeesTable data={data} />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          margin: "20px",
-        }}
-      >
-        <FieldSet text="Employees by Job Title">
-          <PieChart mappedData={mappedChartData(data, "jobTitle")} />
-        </FieldSet>
-        <FieldSet text="Employees by Gender">
-          <BarChart mappedData={mappedChartData(data, "gender")} />
-        </FieldSet>
-      </Box>
+      {!data.length ? (
+        <LinearProgress />
+      ) : (
+        <>
+          <EmployeesTable data-testid="employees-table" data={data} />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              margin: "20px",
+            }}
+          >
+            <FieldSet text="Employees by Job Title">
+              <PieChart
+                data-testid="pieChart"
+                mappedData={mappedChartData(data, "jobTitle")}
+              />
+            </FieldSet>
+            <FieldSet text="Employees by Gender">
+              <BarChart
+                data-testid="barChart"
+                mappedData={mappedChartData(data, "gender")}
+              />
+            </FieldSet>
+          </Box>
+        </>
+      )}
     </Container>
   );
 }

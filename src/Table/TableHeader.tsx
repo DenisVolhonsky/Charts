@@ -22,7 +22,7 @@ const TableHeader = ({
 
   return (
     <TableHead>
-      <TableRow>
+      <TableRow data-testid="table-header">
         {columns.map((column) => (
           <StyledTableCell
             key={column.id}

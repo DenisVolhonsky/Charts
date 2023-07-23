@@ -60,7 +60,7 @@ const EmployeesTable = ({ data }) => {
         sx={{ maxHeight: 440 }}
         style={{ border: "1px solid black" }}
       >
-        <Table stickyHeader aria-label="sticky table">
+        <Table data-testid='table' stickyHeader aria-label="sticky table">
           <TableHeader
             valueToOrderBy={valueToOrderBy}
             orderDirection={orderDirection}
@@ -81,6 +81,7 @@ const EmployeesTable = ({ data }) => {
                   const value = row[column.id];
                   return (
                     <TableCell
+                      data-testid='user-item'
                       key={nanoid()}
                       align={column.align}
                       style={{ borderLeft: "1px solid black" }}
